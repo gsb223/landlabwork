@@ -67,9 +67,36 @@ for i in range(25):
 
 imshow_grid(mg, 'topographic__elevation')
 
+from landlab import HexModelGrid
+
+mg = HexModelGrid((25, 40), 10, node_layout="rect")
+z = mg.add_zeros('topographic__elevation', at='node')
+plt.plot(mg.x_of_node, mg.y_of_node, '.')
+
+fault_trace_y = 50.0 + 0.25 * mg.x_of_node
+z[mg.y_of_node >
+  fault_trace_y] += 10.0 + 0.01 * mg.x_of_node[mg.y_of_node > fault_trace_y]
+imshow_grid(mg, "topographic__elevation")
+
+qs = mg.add_zeros('sediment_flux', at='link')
+for i in range(25):
+    g = mg.calc_grad_at_link(z)
+    qs[mg.active_links] = -D * g[mg.active_links]
+    dzdt = -mg.calc_flux_div_at_node(qs)
+    z[mg.core_nodes] += dzdt[mg.core_nodes] * dt
+imshow_grid(mg, 'topographic__elevation')
+
+from landlab.components import LinearDiffuser
+
+mg = HexModelGrid((25, 40), 10, node_layout="rect")
+z = mg.add_zeros('topographic__elevation', at='node')
+fault_trace_y = 50.0 + 0.25 * mg.x_of_node
+z[mg.y_of_node >
+  fault_trace_y] += 10.0 + 0.01 * mg.x_of_node[mg.y_of_node > fault_trace_y]
 
 
+ld = LinearDiffuser(mg, linear_diffusivity=D)
 
-
-
-
+for i in range(25):
+    ld.run_one_step(dt)
+imshow_grid(mg, 'topographic__elevation')
