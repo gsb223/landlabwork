@@ -12,15 +12,15 @@ import matplotlib.pyplot as plt # For plotting results
 
 #Landlab component Imports
 from landlab.components import DepressionFinderAndRouter #For pit filling
-from landlab.components import FlowRouter #For flow routing
-from landlab.components import Space #space model 
+from landlab.components import FlowRouter #Flow router
+from landlab.components import Space #SPACE model
 
 ##Import Landlab utilities
 from landlab import RasterModelGrid #grid unitily
 from landlab import imshow_grid #For plotting results
-#matplotlib inline
+#%matplotlib inline
 
-"""Now defining the model domans and the initial conditions"""
+"""Now defining the model domains and the initial conditions"""
 #Set grid parameters
 num_rows = 20
 num_columns = 20
