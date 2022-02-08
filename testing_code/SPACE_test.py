@@ -1,5 +1,5 @@
 """ 
-This code is for testing the SPACE landlab components that have already been developed for
+This code is for testing the SPACE landlab components that have already been developed
 For EES 393 Research
 @date_created 2/5/22
 @date_last_modified 2/5/22
