@@ -1,11 +1,11 @@
-# FLandlabwork Repo
+# Landlabwork Repo
 
 Gabriela Birardi Undergrad Research
 Advisor: Frank Pazzaglia (EES Department)  
 
 ## Description
 
-This is the repository for all of my code ranging from Sprign 2022 to Spring 2023. The code in the beginning is less 
+This is the repository for all of my code ranging from Sprign 2022 to Spring 2023. The code in the beginning is less. Modeling used to model landscape change using the LandLab pthon library. All code is written in Python but there are many files that are jupyter notebooks. 
 
 ## Table of Contents
 
