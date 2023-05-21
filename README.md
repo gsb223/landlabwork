@@ -32,4 +32,4 @@ I talked with several other eople more familiar with landlab as I was learning h
 
 My personal email is gsbirardi@gmail.com if you have any questions or you can also find and contact me on LinkedIn.  
   
-Original GitHub repo link: 
+Original GitHub repo link: https://github.com/gsb223/landlabwork/tree/main
